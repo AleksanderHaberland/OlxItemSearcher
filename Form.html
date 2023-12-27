@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>UiPath KYC Solution</title>
+  </head>
+  <body>
+      
+          lowPrice:<br>
+          <input type="text" id="lowPrice"><br>
+          item name:<br>
+          <input type="text" id="item"><br>
+          highPrice:<br>
+          <input type="text" id="highPrice"><br>
+          <button onclick="SubmitValues()">Submit</button>
+          <script type="text/javascript">
+          function SubmitValues(){
+            var lowPrice = document.getElementById("lowPrice").value;
+            var item = document.getElementById("item").value;
+            var highPrice = document.getElementById("highPrice").value;
+            window.external.setResult(lowPrice + "," + item + "," + highPrice);
+            return true;
+          }
+            
+          </script>
+  </body>
+  </html>
