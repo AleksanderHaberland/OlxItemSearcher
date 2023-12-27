@@ -1,14 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UserInformation" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="PriceLow" Type="OutArgument(x:String)" />
-    <x:Property Name="Item" Type="OutArgument(x:String)" />
-    <x:Property Name="PriceMax" Type="OutArgument(x:String)" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1593.9622641509434,851.3207547169811</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>UserInformation_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Searcher" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1593.9622641509434,851.3207547169811" sap2010:WorkflowViewState.IdRef="Searcher_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,8 +25,8 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
-      <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -63,16 +53,12 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
@@ -82,23 +68,25 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UserInformation" sap:VirtualizedContainerService.HintSize="450.1132075471698,398.49056603773585" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Searcher" sap:VirtualizedContainerService.HintSize="450.1132075471698,345.9622641509434" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="Searchinfo" />
+      <Variable x:TypeArguments="x:String" Name="PriceLow" />
+      <Variable x:TypeArguments="x:String" Name="Item" />
+      <Variable x:TypeArguments="x:String" Name="PriceMax" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CustomInput Height="{x:Null}" Width="{x:Null}" DisplayName="Custom html form input" sap:VirtualizedContainerService.HintSize="388.5283018867924,84.22641509433961" sap2010:WorkflowViewState.IdRef="CustomInput_1" Result="[SearchInfo]" URI="Form.html" />
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim charArray() As Char = Searchinfo2.ToCharArray&#xA;Dim CharList As New List(Of Char)(charArray)&#xA; Dim lst As List(Of Char) = New List(Of Char)()&#xA;         Dim intt As List(Of Int32) = New List(Of Int32)()&#xA;&#x9;&#x9;         Dim currentInt As Int32 = 0&#xA;&#xA;For Each sign As Char In CharList&#xA;&#x9;If (sign = &quot;,&quot;) Then&#xA;&#x9;&#x9;                intt.Add(currentInt)&#xA;&#x9;Else&#xA;&#x9; lst.Add(sign)&#xA; End If&#xA;             currentInt = currentInt + 1&#xA;Next&#xA; PriceLow = Searchinfo2.Substring(0, intt(0))&#xA; PriceMax = Searchinfo2.Substring(intt(1) + 1)&#xA; Item = Searchinfo2.Substring(intt(0) + 1, intt(1) - intt(0) - 1)&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="388.5283018867924,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
-      <ui:InvokeCode.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="Searchinfo2">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Searchinfo" />
-        </InArgument>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="UserInformation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388.5283018867924,112.30188679245282" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="UserInformation.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="PriceLow">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="PriceLow" />
         </OutArgument>
@@ -108,7 +96,8 @@
         <OutArgument x:TypeArguments="x:String" x:Key="PriceMax">
           <VisualBasicReference x:TypeArguments="x:String" ExpressionText="PriceMax" />
         </OutArgument>
-      </ui:InvokeCode.Arguments>
-    </ui:InvokeCode>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388.5283018867924,84.22641509433961" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Price  &quot; + PriceLow + &quot;  item:  &quot; + Item + &quot;  High  &quot; + PriceMax]" />
   </Sequence>
 </Activity>
