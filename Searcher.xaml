@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Searcher" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1593.9622641509434,2709.7358490566035" sap2010:WorkflowViewState.IdRef="Searcher_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Searcher" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1593.9622641509434,3070.188679245283" sap2010:WorkflowViewState.IdRef="Searcher_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -104,7 +104,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Searcher" sap:VirtualizedContainerService.HintSize="669.2830188679245,2644.528301886792" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Searcher" sap:VirtualizedContainerService.HintSize="669.2830188679245,3004.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="PriceLow" />
       <Variable x:TypeArguments="x:String" Name="Item" />
@@ -123,19 +123,19 @@
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="607.6981132075472,83.32075471698113" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Price  &quot; + PriceLow + &quot;  item:  &quot; + Item + &quot;  High  &quot; + PriceMax]" />
-    <Sequence DisplayName="Browser Sequence" sap:VirtualizedContainerService.HintSize="607.6981132075472,2260.528301886792" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Browser Sequence" sap:VirtualizedContainerService.HintSize="607.6981132075472,2620.9811320754716" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Ogłoszenia - Sprzedam, kupię na OLX.pl" sap:VirtualizedContainerService.HintSize="546.1132075471697,2150.9433962264147" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7b96a0f6-5659-4f9b-a450-4d9835e3cc63" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Ogłoszenia - Sprzedam, kupię na OLX.pl" sap:VirtualizedContainerService.HintSize="546.1132075471697,2511.396226415094" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="7b96a0f6-5659-4f9b-a450-4d9835e3cc63" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Type user's filter information" sap:VirtualizedContainerService.HintSize="511.6981132075471,1935.3962264150941" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Type user's filter information" sap:VirtualizedContainerService.HintSize="511.6981132075471,2295.8490566037735" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="ExtractOlxDataTable" />
               </Sequence.Variables>
@@ -213,6 +213,12 @@
                   <uix:TargetAnchorable BrowserURL="https://www.olx.pl/oferty/q-rtx-2070/?page=4&amp;search%5Bfilter_enum_state%5D%5B0%5D=used&amp;search%5Bfilter_float_price%3Afrom%5D=500&amp;search%5Bfilter_float_price%3Ato%5D=1000&amp;search%5Border%5D=filter_float_price%3Aasc" DesignTimeRectangle="70, 1429, 1136, 0" DesignTimeScaleFactor="1.1041666269302368" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl class='css-oukcj3' parentid='mainContent' tag='DIV' /&gt;" Guid="98030b0c-fd76-48c2-be3a-12f31d92a61b" InformativeScreenshot="e61d400a6686dc4640da152a07a51350.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dla Ciebie wszystko - sprawdź nowe oferty! - Strona 4' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                 </uix:NExtractData.Target>
               </uix:NExtractData>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xA;&#xA;For Each row As DataRow In ExtractOlxDataTable.Rows&#xA;    Dim value As String = row(2).ToString()&#xA;    Dim onlyNumbers As String = New String(value.Where(Function(c) Char.IsDigit(c)).ToArray())&#xA;&#xA;    ' Set column 2 value to value without String'&#xA;    row(2) = onlyNumbers&#xA;Next&#xA;&#xA;ExtractOlxDataTable.DefaultView.Sort = &quot;MainPrice ASC&quot;&#xA;ExtractOlxDataTable = ExtractOlxDataTable.DefaultView.ToTable&#xA;&#xA;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="450.1132075471698,164.83018867924528" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                <ui:InvokeCode.Arguments>
+                  <InOutArgument x:TypeArguments="sd:DataTable" x:Key="ExtractOlxDataTable">[ExtractOlxDataTable]</InOutArgument>
+                </ui:InvokeCode.Arguments>
+              </ui:InvokeCode>
+              <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[ExtractOlxDataTable]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450.1132075471698,115.92452830188678" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Data" WorkbookPath="OutPut\announcements.xlsx" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
