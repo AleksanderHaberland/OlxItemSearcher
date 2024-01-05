@@ -41,7 +41,7 @@ What are the needs to automate this process?
 
 ![image](https://github.com/AleksanderHaberland/OlxItemSearcher/assets/39680649/0ec59836-9320-404d-b997-c0a7f1ec67ee)
 
-<h3> DataTabke extraction to Excel</h3>
+<h3> DataTable extraction to Excel</h3>
 <p> Invoke code checks does DataTable in column no.0 have only results of searching item</p>
 
 ![image](https://github.com/AleksanderHaberland/OlxItemSearcher/assets/39680649/25b4085d-3b94-4fb4-81f5-2fdddb037807)
